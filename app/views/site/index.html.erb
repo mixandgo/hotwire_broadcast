@@ -1,0 +1,21 @@
+<%= turbo_stream_from "registrations" %>
+
+<section class="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
+  <h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">Welcome</h2>
+  <p class="mt-2 text-gray-600 dark:text-gray-300">
+    Here's a list with all the users that have been registered.
+  </p>
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-8">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="px-6 py-3">Email</th>
+        <th scope="col" class="px-6 py-3">Date</th>
+        <th scope="col" class="px-6 py-3"></th>
+      </tr>
+    </thead>
+    <tbody id="users">
+      <%= render @users %>
+    </tbody>
+  </table>
+</section>
