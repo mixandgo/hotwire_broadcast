@@ -1,6 +1,6 @@
 <tr id="<%= dom_id user %>_row" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
   <td class="px-6 py-4"><%= user.name %></td>
   <td class="px-6 py-4"><%= user.email %></td>
-  <td class="px-6 py-4"><%= user.created_at.to_s(:short) %></td>
+  <td class="px-6 py-4"><%= user.created_at.to_fs(:short) %></td>
   <td class="px-6 py-4"><%= online_status(user) %></td>
 </tr>
