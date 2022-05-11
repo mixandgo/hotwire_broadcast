@@ -5,11 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   after_create_commit lambda {
-    broadcast_prepend_to "users_list", target: "users"#, partial: "users/user"
+    broadcast_prepend_later_to "users_list", target: "users"#, partial: "users/user"
   }
 
   after_update_commit lambda {
-    broadcast_replace_to "users_list", target: "#{dom_id self}_row"#, partial: "users/user"
+    broadcast_replace_later_to "users_list", target: "#{dom_id self}_row"#, partial: "users/user"
   }
 
   after_destroy_commit lambda {
